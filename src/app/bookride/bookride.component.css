@@ -1,0 +1,17 @@
+.table-header {
+    background-color: #337ab7;
+    color: white;
+}
+
+button {
+    background-color: #337ab7;
+}
+
+#rcorners2 {
+    border-radius: 5px;
+    border: 1px solid #337ab7;
+  }
+
+#container {
+    width: 50%;
+}

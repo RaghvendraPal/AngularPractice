@@ -1,0 +1,58 @@
+<div class="container justify-content-center" id="container">
+    <br>
+        <div class="card">
+            <article class="card-body">
+                <h4 class="card-title mb-4 mt-1">Book a Ride</h4>
+                    <!-- <form> -->
+                        <!-- <div class="form-group"> -->
+                    <blockquote>&nbsp;&nbsp;&nbsp;&nbsp; PoolCarz ia a online Application which enable users to share rides with others. You can either book a ride or Offer a ride. Did we mention that this app is advertisement free? To add on top of that its freee of cost ! So what are you waiting for ? check out the rides available and start PCing!!</blockquote>
+                            <!-- <label>PoolCarz ia a online Application which enable users to share rides with others. You can either book a ride or Offer a ride. Did we mention that this app is advertisement free? To add on top of that its freee of cost ! So what are you waiting for ? check out the rides available and start PCing!!</label> -->
+                        <!-- </div> form-group//  -->
+                        <!-- <div class="form-group"> -->
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" (click)="onshowallridebtnclick()"> Show All Rides  </button> &nbsp;
+                        <button *ngIf="btnclick" type="button" class="btn btn-primary"> To Office  </button> &nbsp;
+                        <button *ngIf="btnclick" type="button" class="btn btn-primary"> From Offer</button> &nbsp;
+                        <button *ngIf="btnclick" type="button" class="btn btn-primary"> Others </button>
+                        <br *ngIf="btnclick"><br *ngIf="btnclick"><br *ngIf="btnclick">
+                        <p *ngIf="btnclick" class="text-primary">Please select the ride!</p>
+                        <div *ngIf="btnclick" class="table-responsive"  id="rcorners2">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="table-header">
+                                        <th>Start Point</th>
+                                        <th>End Point</th>
+                                        <th>Seats Available</th>
+                                    </tr>
+                                </thead>
+                                <tbody  *ngFor="let data of ridedata">
+                                    <tr appShowallridebtn defaultColor="gray">
+                                        <td>{{data.pickup}}</td>
+                                        <td>{{data.destination}}</td>
+                                        <td>{{data.seatsLeft}}</td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary"> Offer A Ride  </button>
+                    </div>
+                    <!-- </div> form-group//          -->
+                    <!-- </form>                                                   -->
+            </article>
+        </div> <!-- card.// -->
+</div> 
+<!--container end.//-->
