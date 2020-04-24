@@ -8,7 +8,7 @@ app.listen(process.env.PORT || 8080);
 //     res.sendFile(path.join(__dirname + '/dist/pool-carz/index.html'));
 // });
 app.get('*', (req, res) => {
-    res.sendFile(`./front-end/dist/index.html`); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendFile('./front-end/dist/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 console.log('Console listening');
