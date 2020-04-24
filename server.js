@@ -15,4 +15,4 @@ app.get('/*', function(req, res) {
 //     res.sendFile('index.html', { root: __dirname });
 // });
 
-console.log('Console listening', path, __dirname + '/dist/');
+// console.log('Console listening', path, __dirname + '/dist/');
