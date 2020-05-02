@@ -1,0 +1,8 @@
+[
+    {"id":0, "username": "raghav@gmail.com", "password": "1234"},
+    {"id":1, "username": "prachi0893@gmail.com", "password": "1234"},
+    {"id":2, "username": "suraj123@gmail.com", "password": "1234"},
+    {"id":3, "username": "pooja123@gmail.com", "password": "1234"},
+    {"id":4, "username": "sourabh123@gmail.com", "password": "1234"},
+    {"id":4, "username": "admin", "password": "admin"}    
+]

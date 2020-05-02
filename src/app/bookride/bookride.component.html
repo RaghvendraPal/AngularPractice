@@ -27,8 +27,8 @@
                                 </thead>
                                 <tbody  *ngFor="let data of ridedata">
                                     <tr appShowallridebtn defaultColor="gray">
-                                        <td>{{data.pickup}}</td>
-                                        <td>{{data.destination}}</td>
+                                        <td>{{data.pickup  | uppercase}}</td>
+                                        <td>{{data.destination | uppercase }}</td>
                                         <td>{{data.seatsLeft}}</td>
                                     </tr>
                                     <!-- <tr>

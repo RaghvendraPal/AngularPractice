@@ -7,15 +7,18 @@
                 <article class="card-body">
                     <a [routerLink]="['/register']" [queryParams]="{debug: true}" class="float-right btn btn-outline-primary">Sign up</a>
                     <h4 class="card-title mb-4 mt-1">Sign in</h4>
-                        <form>
+                        <form [formGroup] = "userloginBuilder" (ngSubmit)="onSubmit()">
+                            <div class="alert alert-danger" role="alert"   *ngIf="flag">
+                                {{ message }}
+                            </div>
                             <div class="form-group">
                                 <label>Your email</label>
-                                <input #username class="form-control" placeholder="Email" type="email">
+                                <input #username formControlName = "username" class="form-control" placeholder="Email" type="email">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <a class="float-right" href="#">Forgot?</a>
                                 <label>Your password</label>
-                                <input #password class="form-control" placeholder="******" type="password">
+                                <input #password formControlName = "password" class="form-control" placeholder="******" type="password">
                             </div> <!-- form-group// --> 
                             <div class="form-group"> 
                                 <div class="checkbox">
@@ -23,8 +26,13 @@
                                 </div> <!-- checkbox .// -->
                             </div> <!-- form-group// -->  
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit(username.value, password.value)"> Login  </button>
-                            </div> <!-- form-group// -->                                                           
+                                <!-- <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit(username.value, password.value)"> Login  </button> -->
+                                <button type="submit" [disabled] = "!userloginBuilder.valid" class="btn btn-primary btn-block"> Login  </button>
+                            </div> <!-- form-group// --> 
+                            
+                            <!-- <div class="form-group"  *ngIf="flag">
+                                <p> User Name and Password not Matching! <br> Please Enter Valid Credential  </p>
+                            </div>                                                           -->
                         </form>
                 </article>
             </div> <!-- card.// -->
@@ -41,20 +49,20 @@
         <div class="row justify-content-center">
             <div class="card">
                 <article class="card-body">
-                        <form>
+                        <!-- <form> -->
                             <!-- <div class="form-group" *ngIf="isAuthenticated">
                                 <h4>Welcome {{username}}</h4>
 
                                 <a routerLink="/bookRide">Ride Book</a>
                             </div> form-group// -->
-                            <div class="form-group" *ngIf="!isAuthenticated">
-                                <h4>Invalid Login !! Please Try Again</h4>
-                                <button type="submit" class="btn btn-primary btn-block" (click)="submitted=false"> Back  </button>
-                            </div> <!-- form-group// --> 
+                    <div class="form-group" *ngIf="!isAuthenticated">
+                        <h4>Invalid Login !! Please Try Again</h4>
+                        <button type="submit" class="btn btn-primary btn-block" (click)="submitted=false"> Back  </button>
+                    </div> <!-- form-group// --> 
                             <!-- <div class="form-group">
                                 
                             </div> form-group//                                                            -->
-                        </form>
+                        <!-- </form> -->
                 </article>
             </div> <!-- card.// -->
         </div> <!-- row.// -->

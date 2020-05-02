@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,10 @@ import { BookrideComponent } from './bookride/bookride.component';
 import { RegisterComponent } from './register/register.component';
 import { MessageDirective } from './message.directive';
 import { ShowallridebtnDirective } from './showallridebtn.directive';
+import { RidedetailService } from './ridedetail.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +27,11 @@ import { ShowallridebtnDirective } from './showallridebtn.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [RidedetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
